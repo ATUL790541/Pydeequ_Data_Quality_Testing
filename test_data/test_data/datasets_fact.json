@@ -1,0 +1,26 @@
+{
+
+  "Kind": [
+    {
+      "table": "asper_production_kind_us_production_catalog.ppa_output.star_pos_fact_upc",
+      "keys": ["UPC","GEOGRAPHY_DESCRIPTION","WEEK_ENDING_DATE"],
+      "formula_type": "pos"
+  },{
+      "table": "asper_production_kind_us_production_catalog.ppa_output.star_finance_fact",
+      "keys": ["PPG_ID","RETAILER_ID"],
+      "formula_type": "finance"
+    },{
+      "table": "asper_production_kind_us_production_catalog.ppa_output.star_tpm_planning_fact",
+      "keys": ["PPG_ID","RETAILER_ID"],
+      "formula_type": "kind_tpm"
+    },{"table": "asper_production_kind_us_production_catalog.ppa_output.star_pos_fact_private_label",
+      "keys": ["CATEGORY_VALUE","SUBCATEGORY_VALUE","MANUFACTURER_VALUE","SUB_BRAND_VALUE","GEOGRAPHY_DESCRIPTION", "WEEK_ENDING_DATE",
+        "COUNT_PER_PACK", "NET_CONTENT_VALUE","BRAND_VALUE"],
+      "formula_type":"pos"
+     },{"table": "asper_production_kind_us_production_catalog.ppa_output.star_pos_fact_distribution",
+        "keys": ["CATEGORY_VALUE","SUBCATEGORY_VALUE","MANUFACTURER_VALUE","SUB_BRAND_VALUE","GEOGRAPHY_DESCRIPTION",
+        "WEEK_ENDING_DATE","COUNT_PER_PACK","NET_CONTENT_VALUE","BRAND_VALUE"],
+      "formula_type":"distribution"
+     }
+]
+}

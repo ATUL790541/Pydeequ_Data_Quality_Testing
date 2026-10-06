@@ -1,0 +1,143 @@
+{
+  "WEEK_BEGINNING_DATE": {
+    "formula": "date_sub(WEEK_ENDING_DATE, 6)"
+  },
+  "WEEK_SHIFT_DAY": {
+    "formula": "dayofweek(WEEK_ENDING_DATE)"
+  },
+  "UNITS_SOLD": {
+    "formula": "UNITS_WITH_ANY_PROMO + UNITS_WITH_NO_PROMO"
+  },
+  "PROMO_SALES_VALUE": {
+    "formula": "SALES_WITH_ANY_PROMO"
+  },
+  "PROMO_UNITS": {
+    "formula": "UNITS_WITH_ANY_PROMO"
+  },
+  "PROMO_EQ_UNITS": {
+    "formula": "VOLUME_WITH_ANY_PROMO * EQ_VOL_FACTOR"
+  },
+  "NON_PROMO_SALES_VALUE": {
+    "formula": "VALUE_SALES - SALES_WITH_ANY_PROMO"
+  },
+  "NON_PROMO_UNITS": {
+    "formula": "cast(UNITS_SOLD as double) - cast(PROMO_UNITS as double)"
+  },
+  "NON_PROMO_EQ_UNITS": {
+    "formula": "NON_PROMO_UNITS * EQ_VOL_FACTOR"
+  },
+  "PCT_SALES_WITH_PROMO": {
+    "formula": "try_divide(SALES_WITH_ANY_PROMO, VALUE_SALES)"
+  },
+  "PCT_UNITS_WITH_PROMO": {
+    "formula": "try_divide(PROMO_UNITS, UNITS_SOLD)"
+  },
+  "PCT_VOLUME_WITH_PROMO": {
+    "formula": "try_divide(VOLUME_WITH_ANY_PROMO, UNITS_SOLD * EQ_VOL_FACTOR)"
+  },
+  "PROMO_SALES_PCT": {
+    "formula": "PCT_SALES_WITH_PROMO"
+  },
+  "PROMO_UNITS_PCT": {
+    "formula": "PCT_UNITS_WITH_PROMO"
+  },
+  "PROMO_UNIT_PRICE": {
+    "formula": "PROMO_SALES_VALUE / PROMO_UNITS"
+  },
+  "PCT_PROMO_DISCOUNT_DEPTH": {
+    "formula": "try_divide((BASE_UNIT_PRICE - PROMO_UNIT_PRICE), BASE_UNIT_PRICE) * 100"
+  },
+  "PROMO_WEEK_FLAG": {
+    "formula": "CASE WHEN PROMO_UNITS > 0 THEN 1 ELSE 0 END"
+  },
+  "ACV_FEATURE_OR_DISPLAY": {
+    "formula": "ACV_FEATURE_ONLY + ACV_DISPLAY_ONLY + ACV_FEATURE_AND_DISPLAY_ONLY"
+  },
+  "ACV_NO_PROMO": {
+    "formula": "WEEKLY_ACV - ACV_ANY_PROMO"
+  },
+  "PCT_PROMO_ACV": {
+    "formula": "try_divide(ACV_ANY_PROMO, WEEKLY_ACV) * 100"
+  },
+  "PCT_TPR_SHARE_OF_PROMO_UNITS": {
+    "formula": "try_divide(TPR_UNITS, PROMO_UNITS) * 100"
+  },
+  "PCT_FEATURE_SHARE_OF_PROMO_UNITS": {
+    "formula": "try_divide(FEATURE_UNITS, PROMO_UNITS) * 100"
+  },
+  "PCT_DISPLAY_SHARE_OF_PROMO_UNITS": {
+    "formula": "try_divide(DISPLAY_UNITS, PROMO_UNITS) * 100"
+  },
+  "PCT_FEATURE_AND_DISPLAY_SHARE_OF_PROMO_UNITS": {
+    "formula": "try_divide(FEATURE_AND_DISPLAY_UNITS, PROMO_UNITS) * 100"
+  },
+  "TPR_VOLUME": {
+    "formula": "TPR_UNITS * EQ_VOL_FACTOR"
+  },
+  "DISPLAY_VOLUME": {
+    "formula": "DISPLAY_UNITS * EQ_VOL_FACTOR"
+  },
+  "FEATURE_VOLUME": {
+    "formula": "FEATURE_UNITS * EQ_VOL_FACTOR"
+  },
+  "FEATURE_AND_DISPLAY_VOLUME": {
+    "formula": "FEATURE_AND_DISPLAY_UNITS * EQ_VOL_FACTOR"
+  },
+  "DISPLAY_VALUE": {
+    "formula": "DISPLAY_UNITS * UNIT_PRICE"
+  },
+  "FEATURE_VALUE": {
+    "formula": "FEATURE_UNITS * UNIT_PRICE"
+  },
+  "BASE_UNITS": {
+    "formula": "UNITS_SOLD - PROMO_UNITS"
+  },
+  "BASE_VALUE": {
+    "formula": "BASE_UNITS * BASE_UNIT_PRICE"
+  },
+  "BASE_EQ_VOLUME": {
+    "formula": "BASE_UNITS * EQ_VOL_FACTOR"
+  },
+  "BASE_PRICE_UNIT_WTD": {
+    "formula": "try_divide((BASE_UNIT_PRICE * BASE_UNITS), UNITS_SOLD)"
+  },
+  "INCREMENTAL_VALUE": {
+    "formula": "VALUE_SALES - BASE_VALUE"
+  },
+  "INCREMENTAL_UNITS": {
+    "formula": "UNITS_SOLD - BASE_UNITS"
+  },
+  "INCREMENTAL_EQ_VOLUME": {
+    "formula": "INCREMENTAL_UNITS * EQ_VOL_FACTOR"
+  },
+  "VALUE_SALES_MM_ACV": {
+    "formula": "try_divide(VALUE_SALES, WEEKLY_ACV) * 1000000"
+  },
+  "UNITS_PER_MM_ACV": {
+    "formula": "try_divide(UNITS_SOLD, WEEKLY_ACV) * 1000000"
+  },
+  "VOLUME_PER_MM_ACV": {
+    "formula": "try_divide((UNITS_SOLD * EQ_VOL_FACTOR), WEEKLY_ACV) * 1000000"
+  },
+  "IPS": {
+    "formula": "try_divide(VALUE_SALES, TDP)"
+  },
+  "TDP": {
+    "formula": "try_divide(WEIGHTED_DISTRIBUTION_ACV, WEEKLY_ACV) * 100"
+  },
+  "WEIGHTED_WEEKS_DISPLAY": {
+    "formula": "try_divide(ACV_DISPLAY_ONLY, WEEKLY_ACV)"
+  },
+  "WEIGHTED_WEEKS_FEATURE": {
+    "formula": "try_divide(ACV_FEATURE_ONLY, WEEKLY_ACV)"
+  },
+  "WEIGHTED_WEEKS_ANY_PROMO": {
+    "formula": "try_divide(ACV_ANY_PROMO, WEEKLY_ACV)"
+  },
+  "EQ_VOL_FACTOR": {
+    "formula": "try_divide(EQ_VOLUME_SALES, UNIT_SALES)"
+  },
+   "PCT_PROMO_EQ_UNITS": {
+    "formula": "PCT_VOLUME_WITH_PROMO"
+  }
+}

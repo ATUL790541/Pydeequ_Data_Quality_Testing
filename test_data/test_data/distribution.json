@@ -1,0 +1,29 @@
+{
+  "WEEK_BEGINNING_DATE": {
+    "formula": "date_sub(WEEK_ENDING_DATE, 6)"
+  },
+  "TDP": {
+    "formula": "WEIGHTED_DISTRIBUTION_ACV"
+  },
+  "ACV_ANY_PROMO": {
+    "formula": "coalesce(ACV_FEATURE_ONLY,0) + coalesce(ACV_DISPLAY_ONLY,0) + coalesce(ACV_FEATURE_AND_DISPLAY_ONLY,0) + coalesce(ACV_TPR_ONLY,0)"
+  },
+  "ACV_NO_PROMO": {
+    "formula": "WEEKLY_ACV - ACV_ANY_PROMO"
+  },
+  "ACV_FEATURE_OR_DISPLAY": {
+    "formula": "coalesce(ACV_FEATURE_ONLY,0) + coalesce(ACV_DISPLAY_ONLY,0) + coalesce(ACV_FEATURE_AND_DISPLAY_ONLY,0)"
+  },
+  "PCT_PROMO_ACV": {
+    "formula": "CASE WHEN WEEKLY_ACV != 0 THEN (ACV_ANY_PROMO / WEEKLY_ACV) ELSE 0.0 END"
+  },
+  "TDP_ANY_PROMO": {
+    "formula": "coalesce(TDP_FEAT_ONLY,0) + coalesce(TDP_DISP_ONLY,0) + coalesce(TDP_FEAT_AND_DISP,0) + coalesce(TDP_TPR_ONLY,0)"
+  },
+  "TDP_NO_PROMO": {
+    "formula": "TDP - TDP_ANY_PROMO"
+  },
+  "ACV_MM": {
+    "formula": "WEEKLY_ACV / 1000000"
+  }
+}

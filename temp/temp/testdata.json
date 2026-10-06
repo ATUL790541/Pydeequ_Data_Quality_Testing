@@ -1,0 +1,227 @@
+{
+  "DATASETS": {
+    "Danone": {
+      "planned_customer_dimension": {
+        "table": "asper_production_danone_us_production_catalog.silver_us.star_planned_customer_dimension",
+        "sheet_name": "Planned Customer Dimension",
+        "keys": ["PLANNED_CUSTOMER_CODE"]
+      },
+      "pos_fact_upc": {
+        "table": "asper_production_danone_us_production_catalog.silver_us.star_pos_fact_upc",
+        "sheet_name": "Pos Fact (UPC)",
+        "keys": ["UPC", "GEOGRAPHY_DESCRIPTION", "WEEK_ENDING_DATE"]
+      },
+      "product_dimension": {
+        "table": "asper_production_danone_us_production_catalog.silver_us.star_product_dimension",
+        "sheet_name": "Material Dimension",
+        "keys": ["UPC", "BASE_ITEM_NUMBER"]
+      },
+      "tpm_planning_fact": {
+        "table": "asper_production_danone_us_production_catalog.silver_us.star_tpm_planning_fact",
+        "sheet_name": "TPM Planning Fact",
+        "keys": ["SALES_ORGANIZATION_CODE", "PROMOTION_ID", "PLANNING_EVENT_ID", "MATERIAL_GROUP_ID"]
+      },
+      "retailer_dimension": {
+        "table": "asper_production_danone_us_production_catalog.silver_us.star_retailer_dimension",
+        "sheet_name": "Retailer Dimension",
+        "keys": ["RETAILER", "GEOGRAPHY_KEY"]
+      },
+      "Geography_dimension": {
+        "table": "asper_production_danone_us_production_catalog.silver_us.star_geo_dimension",
+        "sheet_name": "Geo Dimension",
+        "keys": ["GEOGRAPHY_KEY"]
+      },
+      "PNL_Fact": {
+        "table": "asper_production_danone_us_production_catalog.silver_us.star_pnl_fact",
+        "sheet_name": "PNL Fact (PPG)",
+        "keys": ["SALES_ORGANIZATION_CODE", "CHANNEL_CODE", "RETAILER_ID", "PERIOD_START_DATE", "PPG", "METRIC_CATEGORY"]
+      }
+    },
+
+    "Kind": {
+      "star_geo_distribution_dimension": {
+        "table": "asper_production_kind_us_production_catalog.ppa_output.star_geo_distribution_dimension",
+        "sheet_name": "Geo Dimension",
+        "keys": ["GEOGRAPHY_KEY"]
+      },
+      "star_geo_sub_brand_dimension": {
+        "table": "asper_production_kind_us_production_catalog.ppa_output.star_geo_sub_brand_dimension",
+        "sheet_name": "Geo Dimension",
+        "keys": ["GEOGRAPHY_KEY"]
+      },
+      "star_geo_private_label_dimension": {
+        "table": "asper_production_kind_us_production_catalog.ppa_output.star_geo_private_label_dimension",
+        "sheet_name": "Geo Dimension",
+        "keys": ["GEOGRAPHY_KEY"]
+      },
+      "star_geo_iri_dimension": {
+        "table": "asper_production_kind_us_production_catalog.ppa_output.star_geo_iri_dimension",
+        "sheet_name": "Geo Dimension",
+        "keys": ["GEOGRAPHY_KEY"]
+      },
+      "star_time_distribution_dimension": {
+        "table": "asper_production_kind_us_production_catalog.ppa_output.star_time_distribution_dimension",
+        "sheet_name": "Date Dimension",
+        "keys": ["DATE_KEY"]
+      },
+      "star_time_iri_dimension": {
+        "table": "asper_production_kind_us_production_catalog.ppa_output.star_time_iri_dimension",
+        "sheet_name": "Date Dimension",
+        "keys": ["DATE_KEY"]
+      },
+      "star_time_private_level_dimension": {
+        "table": "asper_production_kind_us_production_catalog.ppa_output.star_time_private_level_dimension",
+        "sheet_name": "Date Dimension",
+        "keys": ["DATE_KEY"]
+      },
+      "star_time_sub_brand_dimension": {
+        "table": "asper_production_kind_us_production_catalog.ppa_output.star_time_sub_brand_dimension",
+        "sheet_name": "Date Dimension",
+        "keys": ["DATE_KEY"]
+      },
+      "star_product_distribution_dimension": {
+        "table": "asper_production_kind_us_production_catalog.ppa_output.star_product_distribution_dimension",
+        "sheet_name": "Material Dimension",
+        "keys": ["PRODUCT_KEY"]
+      },
+      "star_product_iri_dimension": {
+        "table": "asper_production_kind_us_production_catalog.ppa_output.star_product_iri_dimension",
+        "sheet_name": "Material Dimension",
+        "keys": ["PRODUCT_KEY"]
+      },
+      "star_product_private_label_dimension": {
+        "table": "asper_production_kind_us_production_catalog.ppa_output.star_product_private_label_dimension",
+        "sheet_name": "Material Dimension",
+        "keys": ["PRODUCT_KEY"]
+      },
+      "star_product_sub_brand_dimension": {
+        "table": "asper_production_kind_us_production_catalog.ppa_output.star_product_sub_brand_dimension",
+        "sheet_name": "Material Dimension",
+        "keys": ["PRODUCT_KEY"]
+      },
+      "star_pos_fact_upc": {
+        "table": "asper_production_kind_us_production_catalog.ppa_output.star_pos_fact_upc",
+        "sheet_name": "Pos Fact (UPC)",
+        "keys": ["UPC", "GEOGRAPHY_DESCRIPTION", "WEEK_ENDING_DATE"]
+      },
+      "star_pos_fact_distribution": {
+        "table": "asper_production_kind_us_production_catalog.ppa_output.star_pos_fact_distribution",
+        "sheet_name": "Pos Fact (Distribution)",
+        "keys": ["CATEGORY_VALUE", "SUBCATEGORY_VALUE", "MANUFACTURER_VALUE", "SUB_BRAND_VALUE", "GEOGRAPHY_DESCRIPTION", "WEEK_ENDING_DATE", "COUNT_PER_PACK", "NET_CONTENT_VALUE", "BRAND_VALUE"]
+      },
+      "star_pos_fact_private_label": {
+        "table": "asper_production_kind_us_production_catalog.ppa_output.star_pos_fact_private_label",
+        "sheet_name": "Pos Fact (Subbrand)",
+        "keys": ["CATEGORY_VALUE", "SUBCATEGORY_VALUE", "MANUFACTURER_VALUE", "SUB_BRAND_VALUE", "GEOGRAPHY_DESCRIPTION", "WEEK_ENDING_DATE", "COUNT_PER_PACK", "NET_CONTENT_VALUE", "BRAND_VALUE"]
+      },
+      "star_pos_fact_sub_brand": {
+        "table": "asper_production_kind_us_production_catalog.ppa_output.star_pos_fact_sub_brand",
+        "sheet_name": "Pos Fact (Subbrand)",
+        "keys": ["CATEGORY_VALUE", "SUBCATEGORY_VALUE", "MANUFACTURER_VALUE", "SUB_BRAND_VALUE", "GEOGRAPHY_DESCRIPTION", "WEEK_ENDING_DATE", "BRAND_VALUE"]
+      },
+      "star_finance_fact": {
+        "table": "asper_production_kind_us_production_catalog.ppa_output.star_finance_fact",
+        "sheet_name": "Finance Fact KPI",
+        "keys": ["RETAILER_ID", "PPG_ID"]
+      },
+      "star_tpm_planning_fact": {
+        "table": "asper_production_kind_us_production_catalog.ppa_output.star_tpm_planning_fact",
+        "sheet_name": "TPM Planning Fact",
+        "keys": ["PROMOTION_ID", "SOURCE_PROMOTION_ID"]
+      }
+    },
+
+    "GeorgiaPacific": {
+      "pos_data_upc": {
+        "table": "asper_production_georgiapacific_us_catlog.ppa_output.star_pos_fact_upc",
+        "sheet_name": "Pos Fact (UPC)",
+        "keys": ["UPC", "GEOGRAPHY_DESCRIPTION", "WEEK_ENDING_DATE"]
+      },
+      "pos_fact_subbrand": {
+        "table": "asper_production_georgiapacific_us_catlog.ppa_output.star_pos_fact_subbrand",
+        "sheet_name": "Pos Fact (Subbrand)",
+        "keys": ["GEOGRAPHY_DESCRIPTION", "WEEK_ENDING_DATE", "CATEGORY_VALUE", "MANUFACTURER_VALUE", "BRAND_VALUE", "SUB_BRAND_VALUE"]
+      },
+      "tpm_planning_fact": {
+        "table": "asper_production_georgiapacific_us_catlog.silver_us.star_tpm_planning_fact",
+        "sheet_name": "TPM Planning Fact",
+        "keys": ["MATERIAL_GROUP_ID", "PLAN_GROUP_ID", "PROMOTION_ID", "START_TIMESTAMP", "END_TIMESTAMP"]
+      },
+      "product_dimension": {
+        "table": "asper_production_georgiapacific_us_catlog.ppa_output.star_product_dimension",
+        "sheet_name": "Material Dimension",
+        "keys": ["UPC"]
+      }
+    },
+
+    "Hormel": {
+      "material_dimension": {
+        "table": "asper_production_hormelfoods_us_production_catalog.silver_us.star_dim_material",
+        "sheet_name": "Material Dimension",
+        "keys": ["UPC"]
+      },
+      "geo_dimension": {
+        "table": "asper_production_hormelfoods_us_production_catalog.silver_us.star_dim_geo",
+        "sheet_name": "Geo Dimension",
+        "keys": ["GEOGRAPHY_KEY"]
+      },
+      "date_day_dimension": {
+        "table": "asper_production_hormelfoods_us_production_catalog.silver_us.star_dim_date_day",
+        "sheet_name": "Date Dimension",
+        "keys": ["CURRENT_YEAR_CALENDAR_DATE"]
+      },
+      "date_week_dimension": {
+        "table": "asper_production_hormelfoods_us_production_catalog.silver_us.star_dim_date_fiscal_week",
+        "sheet_name": "Date Dimension",
+        "keys": ["FISCAL_YEAR_WEEK"]
+      },
+      "retailer_dimension": {
+        "table": "asper_production_hormelfoods_us_production_catalog.silver_us.star_dim_retailer",
+        "sheet_name": "Retailer Dimension",
+        "keys": ["PLANT_TO_ID"]
+      },
+      "customer_planto_dimension": {
+        "table": "asper_production_hormelfoods_us_production_catalog.silver_us.star_dim_customer_planto",
+        "sheet_name": "Planned Customer Dimension",
+        "keys": ["PLANNED_CUSTOMER_CODE"]
+      },
+      "customer_dimension": {
+        "table": "asper_production_hormelfoods_us_production_catalog.silver_us.star_dim_customer",
+        "sheet_name": "Retailer Dimension",
+        "keys": ["DISTRIBUTOR_CUSTOMER_CODE"]
+      },
+      "tpm_promotion_dimension": {
+        "table": "asper_production_hormelfoods_us_production_catalog.silver_us.star_dim_tpm_promotion",
+        "sheet_name": "TPM Promotion Dimension",
+        "keys": ["PROMOTION_ID", "PPG_ID"]
+      },
+      "tpm_plan_dimension": {
+        "table": "asper_production_hormelfoods_us_production_catalog.silver_us.star_dim_tpm_plan",
+        "sheet_name": "TPM Plan Dimension",
+        "keys": ["PLAN_ID"]
+      },
+      "shipment_fact": {
+        "table": "asper_production_hormelfoods_us_production_catalog.silver_us.star_fact_shipment",
+        "sheet_name": "Shipment Fact",
+        "keys": ["SKU_ID", "SHIP_TO_WAREHOUSE_ID", "DATE_KEY", "UPC"]
+      },
+      "date_dimension": {
+        "table": "asper_production_hormelfoods_us_production_catalog.silver_us.star_dim_date_fiscal_week",
+        "sheet_name": "Date Dimension",
+        "keys": ["FISCAL_YEAR_WEEK"]
+      },
+      "product_dimension": {
+        "table": "asper_production_hormelfoods_us_production_catalog.silver_us.star_dim_product",
+        "sheet_name": "Material Dimension",
+        "keys": ["PPG", "PRODUCT_KEY"]
+      },
+      "plant_geo_bridge": {
+        "table": "asper_production_hormelfoods_us_production_catalog.silver_us.star_bridge_planto_geo",
+        "sheet_name": "PLANT_TO_GEOGRAPHY_BRIDGE",
+        "keys": ["PLANT_TO_ID", "GEOGRAPHY_DESCRIPTION", "CUSTOMER_DIVISION_KEY"]
+      }
+    }
+  },
+
+  "SCHEMA_PATH": "/Volumes/asper_product_databricks_catlog/test/silver_schema/ADP Silver Schema-3.xlsx"
+}
